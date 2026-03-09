@@ -1,0 +1,9 @@
+<h2>Johto Pokemon</h2>
+
+<div class="pokemon-container">
+
+@for (p of pokemonService.johto(); track p) {
+  <app-pokemon-card [pokemon]="p"></app-pokemon-card>
+}
+
+</div>

@@ -1,0 +1,44 @@
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.shop {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.items, .cart {
+  width: 40%;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #388e3c;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+}

@@ -1,0 +1,9 @@
+<h2>Hoenn Pokemon</h2>
+
+<div class="pokemon-container">
+
+@for (p of pokemonService.hoenn(); track p) {
+  <app-pokemon-card [pokemon]="p"></app-pokemon-card>
+}
+
+</div>

@@ -1,0 +1,28 @@
+<h2>PokéMart</h2>
+
+<div class="shop">
+
+<div class="items">
+<h3>Items</h3>
+
+@for(item of service.items(); track item){
+  <div class="item">
+    {{item.name}} - {{item.price}}
+    <button (click)="service.addToCart(item)">Add</button>
+  </div>
+}
+
+</div>
+
+<div class="cart">
+<h3>Cart</h3>
+
+@for(c of service.cart(); track c){
+  <p>{{c.name}} - {{c.price}}</p>
+}
+
+<p class="total">Total: {{service.total()}}</p>
+
+</div>
+
+</div>
