@@ -1,0 +1,64 @@
+.active-link{
+  border-bottom: 2px solid orange;
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #3B4CCA;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 2px;
+}
+.nav-links li a:hover {
+  color: #fff3e0; 
+  border-bottom: 2px solid #fff3e0;
+}
+
+.active-link {
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+  }
+
+  .nav-links li a {
+      padding-left: 0;
+  }
+}

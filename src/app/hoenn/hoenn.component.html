@@ -3,7 +3,7 @@
 <div class="pokemon-container">
 
 @for (p of pokemonService.hoenn(); track p) {
-  <app-pokemon-card [pokemon]="p"></app-pokemon-card>
+  <app-pokemon-card [pokemon]="p" region="hoenn"></app-pokemon-card>
 }
 
 </div>

@@ -6,31 +6,31 @@ import { Injectable, signal, computed } from '@angular/core';
 export class PokemonService {
 
   kanto = signal([
-    { name: 'Gengar', type: 'Ghost/Poison', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Snorlax', type: 'Snormal', item: 'Charcoal', desc: 'Flame Pokemon' },
-    { name: 'Dragonite', type: 'Dragon/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Scyther', type: 'Bug/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Charizard', type: 'Fire/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Articuno', type: 'Ice/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
+    { name: 'Gengar', type: 'Ghost/Poison', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png' },
+    { name: 'Snorlax', type: 'Snormal', item: 'Charcoal', desc: 'Flame Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png' },
+    { name: 'Dragonite', type: 'Dragon/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png' },
+    { name: 'Scyther', type: 'Bug/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png' },
+    { name: 'Charizard', type: 'Fire/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png' },
+    { name: 'Articuno', type: 'Ice/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png' },
 
   ]);
 
   johto = signal([
-    { name: 'Espeon', type: 'Psychic', item: 'Charcoal', desc: 'Volcano Pokemon' },
-    { name: 'Lugia', type: 'Psychic/Flying', item: 'Magnet', desc: 'Light Pokemon' },
-    { name: 'Gligar', type: 'Ground/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Noctowl', type: 'Normal/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Celebi', type: 'Psychic/Grass', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
-    { name: 'Totodile', type: 'Water', item: 'Light Ball', desc: 'Electric mouse Pokemon' },
+    { name: 'Espeon', type: 'Psychic', item: 'Charcoal', desc: 'Volcano Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png' },
+    { name: 'Lugia', type: 'Psychic/Flying', item: 'Magnet', desc: 'Light Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/249.png' },
+    { name: 'Gligar', type: 'Ground/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/207.png' },
+    { name: 'Noctowl', type: 'Normal/Flying', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png' },
+    { name: 'Celebi', type: 'Psychic/Grass', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/251.png' },
+    { name: 'Totodile', type: 'Water', item: 'Light Ball', desc: 'Electric mouse Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png' },
   ]);
 
   hoenn = signal([
-    { name: 'Blaziken', type: 'Fire/Fighting', item: 'Focus Band', desc: 'Blaze Pokemon' },
-    { name: 'Absol', type: 'Dark', item: 'Twisted Spoon', desc: 'Embrace Pokemon' },
-    { name: 'Rayquaza', type: 'Dragon/Flying', item: 'Focus Band', desc: 'Blaze Pokemon' },
-    { name: 'Groudon', type: 'Ground', item: 'Focus Band', desc: 'Blaze Pokemon' },
-    { name: 'Deoxys', type: 'Psychic', item: 'Focus Band', desc: 'Blaze Pokemon' },
-    { name: 'Wailord', type: 'Water', item: 'Focus Band', desc: 'Blaze Pokemon' },
+    { name: 'Blaziken', type: 'Fire/Fighting', item: 'Focus Band', desc: 'Blaze Pokemon', image: 'https://img.pokemondb.net/sprites/diamond-pearl/normal/blaziken-f.png' },
+    { name: 'Absol', type: 'Dark', item: 'Twisted Spoon', desc: 'Embrace Pokemon', image: 'https://img.pokemondb.net/sprites/ruby-sapphire/normal/absol.png' },
+    { name: 'Rayquaza', type: 'Dragon/Flying', item: 'Focus Band', desc: 'Blaze Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png' },
+    { name: 'Groudon', type: 'Ground', item: 'Focus Band', desc: 'Blaze Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png' },
+    { name: 'Deoxys', type: 'Psychic', item: 'Focus Band', desc: 'Blaze Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png' },
+    { name: 'Wailord', type: 'Water', item: 'Focus Band', desc: 'Blaze Pokemon', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/321.png' },
   ]);
 
   items = signal([
@@ -48,12 +48,12 @@ export class PokemonService {
 
   cart = signal<any[]>([]);
 
-  addToCart(item:any){
-    this.cart.update(c => [...c, item]);
+  addToCart(item: any) {
+    this.cart.update(c => [...c, { item, quantity: 1 }]);
   }
 
   total = computed(() =>
-    this.cart().reduce((sum, item) => sum + item.price, 0)
+    this.cart().reduce((sum, entry: any) => sum + entry.item.price * entry.quantity, 0)
   );
 
 }

@@ -9,5 +9,6 @@ import { Component, input } from '@angular/core';
 export class PokemonCardComponent {
 
   pokemon = input<any>();
+  region = input<string>('');
 
 }

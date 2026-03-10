@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokemartComponent } from './pokemart.component';
 
 describe('PokemartComponent', () => {
@@ -9,8 +8,7 @@ describe('PokemartComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PokemartComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PokemartComponent);
     component = fixture.componentInstance;
@@ -21,3 +19,4 @@ describe('PokemartComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

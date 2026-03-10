@@ -1,28 +1,29 @@
-<h2>PokéMart</h2>
+<h2>Pokémart</h2>
 
 <div class="shop">
-
-<div class="items">
-<h3>Items</h3>
-
-@for(item of service.items(); track item){
-  <div class="item">
-    {{item.name}} - {{item.price}}
-    <button (click)="service.addToCart(item)">Add</button>
+  <div class="items">
+    <h3>Items for sale</h3>
+    @for (item of service.items(); track item.name) {
+      <div class="item">
+        <span>{{ item.name }} - {{ item.price | currency:'USD':'symbol':'1.0-0' }}</span>
+        <button (click)="service.addToCart(item)">Add to cart</button>
+      </div>
+    }
   </div>
-}
 
+  <div class="cart">
+    <h3>Your cart</h3>
+    @if (service.cart().length === 0) {
+      <p>No items in cart.</p>
+    } @else {
+      @for (entry of service.cart(); track entry.item.name) {
+        <div class="item">
+          <span>{{ entry.item.name }} x{{ entry.quantity }}</span>
+          <span>{{ entry.item.price * entry.quantity | currency:'USD':'symbol':'1.0-0' }}</span>
+        </div>
+      }
+      <p class="total">Total: {{ service.total() | currency:'USD':'symbol':'1.0-0' }}</p>
+    }
+  </div>
 </div>
 
-<div class="cart">
-<h3>Cart</h3>
-
-@for(c of service.cart(); track c){
-  <p>{{c.name}} - {{c.price}}</p>
-}
-
-<p class="total">Total: {{service.total()}}</p>
-
-</div>
-
-</div>

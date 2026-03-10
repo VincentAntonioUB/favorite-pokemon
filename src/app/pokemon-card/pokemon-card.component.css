@@ -1,0 +1,111 @@
+.card {
+  width: 260px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid #fbc02d;
+  background: #fff8e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Kanto - red theme */
+.card.kanto-card {
+  border-color: #e53935;
+  background: #ffebee;
+}
+
+.card.kanto-card .card-header {
+  border-color: #e53935;
+  background: #ffcdd2;
+}
+
+.card.kanto-card .image-frame {
+  border-color: #ef9a9a;
+  background: #ffebee;
+}
+
+/* Johto - gold theme */
+.card.johto-card {
+  border-color: #f9a825;
+  background: #fff8e1;
+}
+
+.card.johto-card .card-header {
+  border-color: #f9a825;
+  background: #ffecb3;
+}
+
+.card.johto-card .image-frame {
+  border-color: #ffca28;
+  background: #fffde7;
+}
+
+/* Hoenn - emerald theme */
+.card.hoenn-card {
+  border-color: #2e7d32;
+  background: #e8f5e9;
+}
+
+.card.hoenn-card .card-header {
+  border-color: #2e7d32;
+  background: #c8e6c9;
+}
+
+.card.hoenn-card .image-frame {
+  border-color: #66bb6a;
+  background: #e8f5e9;
+}
+
+.card-header {
+  width: 100%;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid #fbc02d;
+  background: #ffecb3;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.image-frame {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  border: 1px solid #90caf9;
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-body {
+  width: 100%;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.9rem;
+}
+
+.card-body p {
+  margin: 0;
+}
+
+.card-body .desc {
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
